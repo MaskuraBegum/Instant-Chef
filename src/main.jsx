@@ -10,6 +10,7 @@ import Root from './Root.jsx';
 import Home from './Home/Home.jsx';
 import Error from './Error.jsx';
 import About from './About.jsx';
+import RecipeDetails from './Home/RecipeDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>
+      },
+      {
+        path: "/recipe/:id",
+        element:<RecipeDetails></RecipeDetails>
       }
     ]
   },

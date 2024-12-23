@@ -7,7 +7,7 @@
       "instructions": "To prepare Spaghetti Bolognese, start by heating olive oil in a large pan over medium heat. Add finely chopped onions and minced garlic, and sauté them until soft and fragrant. Next, add the ground beef and cook it thoroughly, breaking it into smaller pieces with a wooden spoon as it browns. Stir in tomato paste and tomato sauce, then add finely chopped carrots and celery for added flavor and texture. Reduce the heat to low and allow the sauce to simmer gently for about 30 minutes, stirring occasionally to prevent sticking. Meanwhile, bring a large pot of salted water to a boil and cook the spaghetti until it reaches an al dente texture. Drain the spaghetti and divide it onto serving plates. Pour the rich and hearty Bolognese sauce over the spaghetti, and garnish with freshly grated Parmesan cheese and a sprinkle of basil. Serve hot and enjoy a delicious Italian classic.",
       "cookingTime": 45,
       "category": "Dinner",
-      "image": "https://i.ibb.co.com/y09R7yV/Vegetable-Stir-Fry-10.webp",
+      "image": "https://i.ibb.co.com/NZMCsfF/spaghetti.webp",
       "createdBy": "Chef Mario"
     },
     {
@@ -18,7 +18,7 @@
       "instructions": "Grill the chicken breast until cooked through, then slice it thinly. Toss the romaine lettuce with croutons, grated Parmesan, and Caesar dressing. Top with the sliced chicken, squeeze fresh lemon juice, and enjoy a healthy yet delicious meal.",
       "cookingTime": 20,
       "category": "Salad",
-      "image": "https://i.ibb.co.com/chicken-caesar-salad.jpg",
+      "image": "https://i.ibb.co.com/xgy7RNW/Caesar-Salad-with-Grilled-Caesar-Chicken-1.jpg",
       "createdBy": "Chef Anna"
     },
     {
@@ -29,7 +29,7 @@
       "instructions": "Sauté tofu cubes in sesame oil until crispy, then remove them from the pan. In the same pan, stir fry the vegetables with ginger, garlic, and soy sauce until tender. Add the tofu back in and toss everything together. Serve hot with rice or noodles.",
       "cookingTime": 25,
       "category": "Vegan",
-      "image": "https://i.ibb.co.com/vegan-stir-fry.jpg",
+      "image": "https://i.ibb.co.com/y09R7yV/Vegetable-Stir-Fry-10.webp",
       "createdBy": "Chef Maya"
     },
     {
@@ -40,7 +40,7 @@
       "instructions": "Brown the ground beef in a pan with taco seasoning. While the beef is cooking, prepare the toppings: chop the lettuce and tomatoes, and shred the cheese. Fill each taco shell with the cooked beef, then add your desired toppings.",
       "cookingTime": 15,
       "category": "Dinner",
-      "image": "https://i.ibb.co.com/beef-tacos.jpg",
+      "image": "https://i.ibb.co.com/4Z5trQC/Beef-Tacos.webp",
       "createdBy": "Chef Luis"
     },
     {
@@ -51,7 +51,7 @@
       "instructions": "Sauté onions and garlic in a pot. Add carrots, celery, potatoes, and tomatoes, and cook for a few minutes. Add vegetable broth and thyme, and let it simmer until the vegetables are tender. Stir in spinach at the end and serve hot.",
       "cookingTime": 30,
       "category": "Soup",
-      "image": "https://i.ibb.co.com/vegetable-soup.jpg",
+      "image": "https://i.ibb.co.com/tYyYwCZ/Vegetable-Soup.jpg",
       "createdBy": "Chef Emily"
     },
     {
@@ -62,7 +62,7 @@
       "instructions": "Grill the chicken breast and slice it thinly. Cook the pasta until al dente. In a pan, melt butter, sauté garlic, then add cream and Parmesan cheese. Simmer to thicken, then toss the pasta in the sauce and top with the sliced chicken.",
       "cookingTime": 35,
       "category": "Dinner",
-      "image": "https://i.ibb.co.com/chicken-alfredo.jpg",
+      "image": "https://i.ibb.co.com/jwRqQ8S/Chicken-Alfredo-Recipe.jpg",
       "createdBy": "Chef Marco"
     },
     {
@@ -73,7 +73,7 @@
       "instructions": "Cook quinoa as per package instructions and let it cool. Chop the vegetables and mix them with the quinoa. In a small bowl, whisk together lemon juice, olive oil, and parsley, and toss the dressing with the salad.",
       "cookingTime": 20,
       "category": "Salad",
-      "image": "https://i.ibb.co.com/quinoa-salad.jpg",
+      "image": "https://i.ibb.co.com/VVTyKLz/Easy-Quinoa-Salad.jpg",
       "createdBy": "Chef Sofia"
     },
     {
@@ -84,7 +84,7 @@
       "instructions": "Mix the dry ingredients, then add the wet ingredients and stir until smooth. Pour batter onto a heated griddle and cook until bubbles form on the surface. Flip and cook until golden brown. Serve with syrup and fresh fruit.",
       "cookingTime": 20,
       "category": "Breakfast",
-      "image": "https://i.ibb.co.com/pancakes.jpg",
+      "image": "https://i.ibb.co.com/DMdpXqd/pancakes.jpg",
       "createdBy": "Chef Kate"
     },
     {
@@ -95,7 +95,7 @@
       "instructions": "Blend chickpeas with garlic, onion, and spices, then form into small balls. Fry until golden brown. Serve with pita and tahini sauce.",
       "cookingTime": 30,
       "category": "Vegan",
-      "image": "https://i.ibb.co.com/falafel.jpg",
+      "image": "https://i.ibb.co.com/n17G90X/falafel-bowl.jpg",
       "createdBy": "Chef Samira"
     },
     {
@@ -106,30 +106,30 @@
       "instructions": "Butter the outside of two slices of bread, then place cheese in the middle. Grill the sandwich in a pan until both sides are golden brown and the cheese is melted.",
       "cookingTime": 10,
       "category": "Breakfast",
-      "image": "https://i.ibb.co.com/grilled-cheese.jpg",
+      "image": "https://i.ibb.co.com/JsWrbJv/cheese-Sandwich.jpg",
       "createdBy": "Chef James"
     },
     {
       "id": 11,
-      "name": "Shakshuka",
-      "description": "A North African dish with poached eggs in a spicy tomato and bell pepper sauce.",
-      "ingredients": ["Eggs", "Tomatoes", "Bell peppers", "Onion", "Garlic", "Cumin", "Paprika", "Parsley"],
-      "instructions": "Cook the onions, garlic, and bell peppers in a skillet. Add tomatoes, cumin, and paprika, and simmer until the sauce thickens. Make wells in the sauce and crack eggs into them. Cover and cook until the eggs are done to your liking. Garnish with parsley.",
-      "cookingTime": 25,
-      "category": "Breakfast",
-      "image": "https://i.ibb.co.com/shakshuka.jpg",
-      "createdBy": "Chef Yasmine"
-    },
-    {
-      "id": 12,
       "name": "Mushroom Risotto",
       "description": "A creamy risotto made with fresh mushrooms and Parmesan cheese.",
       "ingredients": ["Rice", "Mushrooms", "Parmesan cheese", "Butter", "Onion", "Garlic", "Vegetable broth"],
       "instructions": "Sauté onions and garlic in butter, then add rice and toast for a minute. Gradually add vegetable broth, stirring constantly until the rice is cooked. Stir in sautéed mushrooms and Parmesan cheese.",
       "cookingTime": 40,
       "category": "Dinner",
-      "image": "https://i.ibb.co.com/mushroom-risotto.jpg",
+      "image": "https://i.ibb.co.com/tY8Lp1w/mushroom-Risotto.jpg",
       "createdBy": "Chef Carlo"
+    },
+    {
+      "id": 12,
+      "name": "Shakshuka",
+      "description": "A North African dish with poached eggs in a spicy tomato and bell pepper sauce.",
+      "ingredients": ["Eggs", "Tomatoes", "Bell peppers", "Onion", "Garlic", "Cumin", "Paprika", "Parsley"],
+      "instructions": "Cook the onions, garlic, and bell peppers in a skillet. Add tomatoes, cumin, and paprika, and simmer until the sauce thickens. Make wells in the sauce and crack eggs into them. Cover and cook until the eggs are done to your liking. Garnish with parsley.",
+      "cookingTime": 25,
+      "category": "Breakfast",
+      "image": "https://i.ibb.co.com/gTM97GV/shashuka.jpg",
+      "createdBy": "Chef Yasmine"
     }
   ]
   

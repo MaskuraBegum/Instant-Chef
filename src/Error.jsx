@@ -2,8 +2,8 @@ import React from 'react';
 
 const Error = () => {
     return (
-        <div>
-            <h2>Opps! Error occurred!</h2>
+        <div className='flex justify-center items-center h-screen'>
+            <img src="https://i.ibb.co.com/PMbkCzG/error.jpg" alt="error" srcset="" />
         </div>
     );
 };
