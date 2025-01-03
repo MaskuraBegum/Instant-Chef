@@ -35,6 +35,13 @@ const RecipeDetails = () => {
             <p className="text-base text-black mb-4">Cooking Time: <span className='text-gray-600'>{recipe.cookingTime} minutes</span></p>
             <p className="text-base text-black mb-4">Category: <span className='text-gray-600'>{recipe.category}</span></p>
             <p className="text-base text-black mb-4">Created By: <span className='text-gray-600'>{recipe.createdBy}</span></p> 
+            <button
+            className="text-xl text-red-500 mb-6"
+            //onClick={() => handleFavorite(recipeId)}
+            >
+                ♥ Favorite
+            </button>
+
         </div>
     );
 };
