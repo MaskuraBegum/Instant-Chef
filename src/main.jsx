@@ -12,6 +12,7 @@ import Error from './Error.jsx';
 import About from './About.jsx';
 import RecipeDetails from './Home/RecipeDetails.jsx';
 import Login from './Profile/Login.jsx';
+import LoginForm from './Profile/LoginForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Login></Login>
+        element: <LoginForm></LoginForm>
       }
     ]
   },
