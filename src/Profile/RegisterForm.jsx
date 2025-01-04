@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 
-
 // createUserWithEmailAndPassword(auth, email, password)
 //   .then((userCredential) => {
 //     // Signed up 
@@ -103,7 +102,7 @@ const RegisterForm = () => {
                     </button>
                 </div>
                 <div className='mt-4 text-center'>
-                    <p>Already have an account? <Link href="/login" class="text-blue-600 underline pl-2">Login</Link></p>
+                    <p>Already have an account? <Link to="/login" className="text-blue-600 underline pl-2">Login</Link></p>
                 </div>
             </form>
         </div>
