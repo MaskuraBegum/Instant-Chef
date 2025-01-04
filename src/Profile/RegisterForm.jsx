@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../provider/Auth_provider.jsx';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -23,6 +23,12 @@ const RegisterForm = () => {
     const formRef = useRef(null);
     const nevigate = useNavigate();
     const location = useLocation();
+
+    const [showPass, setShowPass] = useState(false);
+    
+        const PasswordVisibility = () => {
+            setShowPass(!showPass);
+        }
     
     const handleRegister = e =>{
         e.preventDefault();
@@ -71,14 +77,16 @@ const RegisterForm = () => {
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
-                <div className="form-control mb-5 relative">
-                    <label className="label font-semibold text-gray-700">Password</label>
+                <div className='flex items-center form-control mb-5 relative'>
                     <input
-                        type="password"
-                        name='password'
+                        type={showPass ? 'text': 'password'}
                         placeholder="Enter your password"
-                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
+                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
                     />
+                    <i
+                        className={`fa-solid ${showPass ? 'fa-eye-slash' : 'fa-eye'} absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer`}
+                        onClick={PasswordVisibility}
+                    ></i>
                 </div>
                 
                 {/* <div className="form-control mb-5">
