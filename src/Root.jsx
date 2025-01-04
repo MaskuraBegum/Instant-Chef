@@ -65,7 +65,7 @@ const Root = () => {
                     </div>
                 </div>
                 :<div className="navbar-end">
-                    <Link to='/login' className="mx-2 pt-2 lg:mx-8 btn text-lg bg-purple-300 block text-center text-purple-950">LogIn</Link>
+                    <Link to='/login' className="mx-2 pt-2 lg:mx-8 btn text-lg bg-purple-400 block text-center text-purple-950">LogIn</Link>
                 </div>}
                 </div>
 
