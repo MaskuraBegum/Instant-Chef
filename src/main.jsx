@@ -14,7 +14,11 @@ import RecipeDetails from './Home/RecipeDetails.jsx';
 //import Login from './Profile/Login.jsx';
 import LoginForm from './Profile/LoginForm.jsx';
 import RegisterForm from './Profile/RegisterForm.jsx'
+<<<<<<< HEAD
 import Auth_provider from './provider/Auth_provider.jsx';
+=======
+import Favorite from './Favorite.jsx';
+>>>>>>> 21380ad8bfdd1cfa13128740b7543b2ad89e5ae7
 
 const router = createBrowserRouter([
   {
@@ -46,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterForm></RegisterForm>
+      },
+      {
+        path: "/favorite",
+        element: <Favorite></Favorite>
       }
     ]
   },
