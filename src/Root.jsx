@@ -5,6 +5,7 @@ const Root = () => {
     const links = (
         <>
             <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Homepage</NavLink></li>
+            <li><NavLink to='/favorite' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Favorite</NavLink></li>
             <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Profile</NavLink></li>
             <li><NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>About</NavLink></li>
         </>
