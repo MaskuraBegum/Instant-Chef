@@ -22,12 +22,10 @@ const Root = () => {
     const links = (
         <>
             <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Homepage</NavLink></li>
-<<<<<<< HEAD
+
             <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Register</NavLink></li>
-=======
             <li><NavLink to='/favorite' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Favorite</NavLink></li>
-            <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Profile</NavLink></li>
->>>>>>> 21380ad8bfdd1cfa13128740b7543b2ad89e5ae7
+
             <li><NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>About</NavLink></li>
         </>
     );
