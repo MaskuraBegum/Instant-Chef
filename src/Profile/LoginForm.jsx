@@ -1,7 +1,13 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 const LoginForm = () => {
+
+    const [showPass, setShowPass] = useState(false);
+
+    const PasswordVisibility = () => {
+        setShowPass(!showPass);
+    }
+
     return (
         <div className="flex justify-center items-center h-auto bg-gray-100">
             <form className="w-full max-w-md bg-white p-6 my-28 rounded-lg shadow-md">
@@ -13,14 +19,21 @@ const LoginForm = () => {
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
-                <div className="form-control mb-5">
+                <div className="form-control mb-5 relative">
                     <label className="label font-semibold text-gray-700">Password</label>
-                    <input
-                        type="password"
-                        placeholder="Enter your password"
-                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
-                    />
+                    <div className='flex items-center'>
+                        <input
+                            type={showPass ? 'text': 'password'}
+                            placeholder="Enter your password"
+                            className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
+                        />
+                        <i
+                            className={`fa-solid ${showPass ? 'fa-eye-slash' : 'fa-eye'} absolute right-3 cursor-pointer`}
+                            onClick={PasswordVisibility}
+                        ></i>
+                    </div>
                 </div>
+
                 <div className="form-control">
                     <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-all duration-300">
                         Login
