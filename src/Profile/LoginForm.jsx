@@ -1,37 +1,78 @@
-import React, { useState } from 'react';
+import React, { useContext, useRef } from 'react';
+import { AuthContext } from '../provider/Auth_provider.jsx';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+    const {signIn, googleLog} = useContext(AuthContext);
+    const formRef = useRef(null);
+    const nevigate = useNavigate();
+    const location = useLocation();
 
-    const [showPass, setShowPass] = useState(false);
 
-    const PasswordVisibility = () => {
-        setShowPass(!showPass);
+    const googleClick = () => {
+            googleLog()
+            .then((result) => {
+                if(result.user){
+                    nevigate(location?.state || '/');
+                    alert('Successfully logged in');
+                }
+                
+            })
+            .catch((error) => {
+                alert(error)
+            })
     }
+    
+    const handlelogin = e =>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const user = {email,password}
+        console.log(user);
+        signIn(email,password)
+        .then(result =>{
+            if(result.user){
+                nevigate(location?.state || '/');
+                console.log(result.user)
+                alert('User is successfully loged in')
+                formRef.current.reset();
+            }
+            
+        })
+        .catch(error=>{
+            console.log(error.message)
+            alert(error.message)
+        })
+
+    }
+
+
+        
+        
+        
+
+
 
     return (
         <div className="flex justify-center items-center h-auto bg-gray-100">
-            <form className="w-full max-w-md bg-white p-6 my-28 rounded-lg shadow-md">
+            <form ref={formRef} onSubmit={handlelogin} className="w-full max-w-md bg-white p-6 my-28 rounded-lg shadow-md">
                 <div className="form-control mb-5">
                     <label className="label font-semibold text-gray-700">Email</label>
                     <input
                         type="email"
+                        name='email'
                         placeholder="abc@gmail.com"
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
                 <div className="form-control mb-5 relative">
                     <label className="label font-semibold text-gray-700">Password</label>
-                    <div className='flex items-center'>
-                        <input
-                            type={showPass ? 'text': 'password'}
-                            placeholder="Enter your password"
-                            className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
-                        />
-                        <i
-                            className={`fa-solid ${showPass ? 'fa-eye-slash' : 'fa-eye'} absolute right-3 cursor-pointer`}
-                            onClick={PasswordVisibility}
-                        ></i>
-                    </div>
+                    <input
+                        type="password"
+                        name='password'
+                        placeholder="Enter your password"
+                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
+                    />
                 </div>
 
                 <div className="form-control">
@@ -45,7 +86,7 @@ const LoginForm = () => {
                     <div className="flex-grow border-t border-dotted border-gray-300"></div>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <button className="w-full bg-red-600 text-white font-medium py-3 rounded-lg flex items-center justify-center hover:bg-red-700 transition-all duration-300">
+                    <button onClick={googleClick} className="w-full bg-red-600 text-white font-medium py-3 rounded-lg flex items-center justify-center hover:bg-red-700 transition-all duration-300">
                         <div className='pr-2'>
                             <i className="fa-brands fa-google"></i>
                         </div>
@@ -63,7 +104,7 @@ const LoginForm = () => {
                         Log in with Facebook
                     </button>
                     <div className='mt-4 text-center'>
-                        <p>Don't have an account? <a href="/register" class="text-blue-600 underline pl-2">Registration</a></p>
+                        <p>Don't have an account? <Link href="/register" class="text-blue-600 underline pl-2">Registration</Link></p>
                     </div>
                 </div>
             </form>
