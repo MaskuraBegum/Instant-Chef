@@ -1,11 +1,28 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink, Outlet,Link } from 'react-router-dom';
+import { AuthContext } from './provider/Auth_provider';
+
 
 const Root = () => {
+    const {logout,user} = useContext(AuthContext);
+
+    const logOut = ()=>{
+        console.log("logout is clicked")
+        logout()
+        .then(()=>{
+            console.log('done')
+            alert('sined out sussecfully')
+        })
+        .catch((error)=>{
+            alert(error.message)
+        })
+    }
+
+
     const links = (
         <>
             <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Homepage</NavLink></li>
-            <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Profile</NavLink></li>
+            <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Register</NavLink></li>
             <li><NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>About</NavLink></li>
         </>
     );
@@ -25,7 +42,7 @@ const Root = () => {
 
                 {/* Right Corner: Buttons */}
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
+                    {/* <button className="btn btn-ghost btn-circle">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -38,10 +55,18 @@ const Root = () => {
                                 strokeWidth="2"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
-                    </button>
-                    <button className="btn btn-ghost btn-square w-24">
-                        <a href="/login" className="pl-2 text-xl block text-center text-purple-950">Login</a>
-                    </button>
+                    </button> */}
+                    {user?<div className="">
+                    <div className='flex flex-col'>
+                    <div className='p-2'>
+                        <div className=' text-xs lg:text-sm p-2 border-2 rounded-2xl'>{user.email}</div>
+                        </div>
+                        <button onClick={logOut} className=" mx-2 lg:mx-8 btn text-lg bg-purple-300 block text-center text-purple-950">LogOut</button>
+                    </div>
+                </div>
+                :<div className="navbar-end">
+                    <Link to='/login' className="mx-2 pt-2 lg:mx-8 btn text-lg bg-purple-300 block text-center text-purple-950">LogIn</Link>
+                </div>}
                 </div>
 
                 {/* Responsive Menu for Small Screens */}

@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import {StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -14,6 +14,7 @@ import RecipeDetails from './Home/RecipeDetails.jsx';
 //import Login from './Profile/Login.jsx';
 import LoginForm from './Profile/LoginForm.jsx';
 import RegisterForm from './Profile/RegisterForm.jsx'
+import Auth_provider from './provider/Auth_provider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Auth_provider>
+      <RouterProvider router={router} />
+    </Auth_provider>
+    
   </StrictMode>,
 )
