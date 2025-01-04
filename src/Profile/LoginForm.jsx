@@ -107,12 +107,11 @@ const LoginForm = () => {
                         Log in with Facebook
                     </button>
                     <div className='mt-4 text-center'>
-<<<<<<< HEAD
+
                         <p>Don't have an account? <Link to="/register"  className="text-blue-600 underline pl-2" >Registration</Link></p>
-=======
                         <p>Don't have an account? <Link to="/register" className="text-blue-600 underline pl-2">Registration</Link>
                         </p>
->>>>>>> 3d26d56474e35b8e3c2577e697c075d78b60bdfb
+
                     </div>
                 </div>
             </form>
