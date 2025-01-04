@@ -49,6 +49,9 @@ const LoginForm = () => {
                         </div>
                         Log in with Facebook
                     </button>
+                    <div className='mt-4 text-center'>
+                        <p>Don't have an account? <a href="/register" class="text-blue-600 underline pl-2">Registration</a></p>
+                    </div>
                 </div>
             </form>
         </div>

@@ -11,8 +11,9 @@ import Home from './Home/Home.jsx';
 import Error from './Error.jsx';
 import About from './About.jsx';
 import RecipeDetails from './Home/RecipeDetails.jsx';
-import Login from './Profile/Login.jsx';
+//import Login from './Profile/Login.jsx';
 import LoginForm from './Profile/LoginForm.jsx';
+import RegisterForm from './Profile/RegisterForm.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <LoginForm></LoginForm>
+        //element: <LoginForm></LoginForm>,
+        element: <RegisterForm></RegisterForm>
+      },
+      { 
+        path: "/login",
+        element: <LoginForm /> 
+      },
+      {
+        path: "/register",
+        element: <RegisterForm></RegisterForm>
       }
     ]
   },
