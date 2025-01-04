@@ -4,7 +4,7 @@ import Recipes from './Recipes';
 
 const Home = () => {
     return (
-        <div className='ml-10'>
+        <div className='ml-2 lg:ml-10'>
             <Banner></Banner>
             <Recipes></Recipes>
         </div>

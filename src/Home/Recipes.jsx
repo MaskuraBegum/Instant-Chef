@@ -19,7 +19,7 @@ const Recipes = () => {
             </p>
             {/* Search bar for recipes */}
             <div className="flex flex-col items-center mt-10">
-                <p className="text-lg font-medium mb-4">
+                <p className="text-lg text-center font-medium mb-4">
                     Find recipes by entering ingredients you have at home!
                 </p>
                 <label className="input input-bordered flex items-center gap-2 w-72 text-center">
@@ -41,7 +41,7 @@ const Recipes = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-6 px-6">
                 {recipes.map((recipe) => (
                     <div key={recipe.id} className="bg-white rounded shadow-md">
-                        <img src={recipe.image} alt={recipe.name} className="w-full h-100" />
+                        <img src={recipe.image} alt={recipe.name} className="w-full h-80" />
                         <div className="p-4">
                             <h3 className="text-lg font-bold text-blue-600">{recipe.name}</h3>
                             <p className="text-gray-600 text-sm">{recipe.description}</p>
