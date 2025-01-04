@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../provider/Auth_provider.jsx';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,12 @@ const LoginForm = () => {
     const nevigate = useNavigate();
     const location = useLocation();
 
+
+    const [showPass, setShowPass] = useState(false);
+
+    const PasswordVisibility = () => {
+        setShowPass(!showPass);
+    }
 
     const googleClick = () => {
             googleLog()
@@ -47,12 +53,6 @@ const LoginForm = () => {
     }
 
 
-        
-        
-        
-
-
-
     return (
         <div className="flex justify-center items-center h-auto bg-gray-100">
             <form ref={formRef} onSubmit={handlelogin} className="w-full max-w-md bg-white p-6 my-28 rounded-lg shadow-md">
@@ -65,15 +65,19 @@ const LoginForm = () => {
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
-                <div className="form-control mb-5">
-                    <label className="label font-semibold text-gray-700">Password</label>
+
+                <div className='flex items-center form-control mb-5 relative'>
                     <input
-                        type="password"
-                        name='password'
+                        type={showPass ? 'text': 'password'}
                         placeholder="Enter your password"
-                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500"
+                        className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
                     />
+                    <i
+                        className={`fa-solid ${showPass ? 'fa-eye-slash' : 'fa-eye'} absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer`}
+                        onClick={PasswordVisibility}
+                    ></i>
                 </div>
+
                 <div className="form-control">
                     <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-all duration-300">
                         Login
@@ -103,7 +107,12 @@ const LoginForm = () => {
                         Log in with Facebook
                     </button>
                     <div className='mt-4 text-center'>
+<<<<<<< HEAD
                         <p>Don't have an account? <Link to="/register"  className="text-blue-600 underline pl-2" >Registration</Link></p>
+=======
+                        <p>Don't have an account? <Link to="/register" className="text-blue-600 underline pl-2">Registration</Link>
+                        </p>
+>>>>>>> 3d26d56474e35b8e3c2577e697c075d78b60bdfb
                     </div>
                 </div>
             </form>

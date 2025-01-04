@@ -13,7 +13,7 @@ const Recipes = () => {
     return (
         <div className='mt-10'>
             <h2 className='text-center text-3xl font-black mb-5'>Recipes You'll Love</h2>
-            <p className="text-center text-gray-600 mb-6 px-72">
+            <p className="text-center text-gray-600 mb-6 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 max-w-4xl mx-auto">
                 Discover a selection of delicious and easy-to-make recipes, tailored to inspire your next culinary adventure. 
                 Whether you're a beginner or a seasoned chef, these recipes are sure to delight your taste buds!
             </p>
