@@ -79,6 +79,7 @@ const RegisterForm = () => {
                 <div className='flex items-center form-control mb-5 relative'>
                     <input
                         type={showPass ? 'text': 'password'}
+                        name='password'
                         placeholder="Enter your password"
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
                     />

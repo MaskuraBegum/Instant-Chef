@@ -16,6 +16,9 @@ import LoginForm from './Profile/LoginForm.jsx';
 import RegisterForm from './Profile/RegisterForm.jsx'
 import Auth_provider from './provider/Auth_provider.jsx';
 import Favorite from './Favorite.jsx';
+import AdminPrivate from './privateRoute/AdminPrivate.jsx';
+import AdminHome from './admin/AdminHome.jsx'
+import AddRecipe from './privateRoute/AddRecipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,9 +54,27 @@ const router = createBrowserRouter([
       {
         path: "/favorite",
         element: <Favorite></Favorite>
-      }
+      },
+      
     ]
   },
+  {
+    path: "/admin/add",
+    element: (
+        <AdminPrivate>
+            <AddRecipe></AddRecipe>
+        </AdminPrivate>
+    ),
+},
+{
+    path: "/admin",
+    element: (
+        <AdminPrivate>
+            <AdminHome></AdminHome>
+        </AdminPrivate>
+    ),
+},
+    
 ])
 
 createRoot(document.getElementById('root')).render(

@@ -36,21 +36,20 @@ const LoginForm = () => {
         const user = {email,password}
         console.log(user);
         signIn(email,password)
-        .then(result =>{
-            if(result.user){
+        .then((result) => {
+            if (result.user) {
+                
                 nevigate(location?.state || '/');
-                console.log(result.user)
-                alert('User is successfully loged in')
+                console.log(result.user);
+                alert('User is successfully logged in');
                 formRef.current.reset();
             }
-            
         })
-        .catch(error=>{
-            console.log(error.message)
-            alert(error.message)
-        })
-
-    }
+        .catch((error) => {
+            console.log(error.message);
+            alert(error.message);
+        });
+};
 
 
     return (
@@ -69,6 +68,7 @@ const LoginForm = () => {
                 <div className='flex items-center form-control mb-5 relative'>
                     <input
                         type={showPass ? 'text': 'password'}
+                        name='password'
                         placeholder="Enter your password"
                         className="input input-bordered w-full border-gray-300 focus:ring-2 focus:ring-blue-500 "
                     />
