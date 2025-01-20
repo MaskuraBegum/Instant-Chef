@@ -6,7 +6,9 @@ const AdminHome = ()=>{
         <div>
             <div>HEllo admin</div>
                 <button className="btn btn-primary" ><Link to='/admin/add'>Add recipe</Link></button>
+                <button className="btn btn-primary" ><Link to='/admin/delete'>Delete recipe</Link></button>
             </div>
+            
     )
 }
 
