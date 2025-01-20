@@ -20,6 +20,7 @@ import AdminPrivate from './privateRoute/AdminPrivate.jsx';
 import AdminHome from './admin/AdminHome.jsx'
 import AddRecipe from './privateRoute/AddRecipe.jsx';
 import DeleteRecipe from './privateRoute/DeleteRecipe.jsx';
+import UpdateRecipe from './privateRoute/UpdateRecipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
   element: (
       <AdminPrivate>
           <DeleteRecipe></DeleteRecipe>
+      </AdminPrivate>
+  ),
+},
+{
+  path: "/admin/update",
+  element: (
+      <AdminPrivate>
+          <UpdateRecipe></UpdateRecipe>
       </AdminPrivate>
   ),
 },
