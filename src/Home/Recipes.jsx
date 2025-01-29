@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [searchIngredient, setSearchIngredient] = useState('');
+    const [data, datalength] = useState(6);
 
     // Fetch all recipes initially or search results based on ingredient
     useEffect(() => {
@@ -80,7 +81,7 @@ const Recipes = () => {
             {/* Displaying recipes */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 mt-6 px-6">
                 {recipes.length > 0 ? (
-                    recipes.map((recipe) => (
+                    recipes.slice(0, data).map((recipe) => (
                         <div key={recipe.id} className="bg-white rounded-lg shadow-md border-y-2 ">
                             <img src={recipe.image} alt={recipe.name} className="w-full h-80" />
                             <div className="p-4">
@@ -113,6 +114,13 @@ const Recipes = () => {
                         </div>
                     </div>
                 )}
+                <div className='col-span-full flex justify-center items-center my-8'>
+                <div className={data === recipes.length && 'hidden'}>
+                <div className="">
+                    <button onClick={() => datalength(recipes.length)} className='btn btn-primary px-6'>Show all</button>
+                </div>
+            </div>
+                </div>
             </div>
         </div>
     );
