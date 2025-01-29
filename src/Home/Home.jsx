@@ -4,9 +4,11 @@ import Recipes from './Recipes';
 
 const Home = () => {
     return (
-        <div className='ml-2 lg:ml-10'>
+        <div className='container mx-auto'>
+            
             <Banner></Banner>
             <Recipes></Recipes>
+        
         </div>
     );
 };

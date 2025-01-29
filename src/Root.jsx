@@ -59,22 +59,21 @@ const Root = () => {
                     </button> */}
                     {user?<div className="">
                     <div className='flex flex-col'>
-                    <div className='p-2'>
+                    <div className='p-0 lg:p-2'>
                         <div className=' text-xs lg:text-sm p-2 border-2 rounded-2xl'>{user.email}</div>
                         </div>
-                        <button onClick={logOut} className=" mx-2 lg:mx-8 btn text-lg bg-purple-300 block text-center text-purple-950">LogOut</button>
+                        <button onClick={logOut} className=" mx-0 lg:mx-8 btn text-lg bg-purple-300 block text-center text-purple-950">LogOut</button>
                     </div>
                 </div>
                 :<div className="navbar-end">
-                    <Link to='/login' className="mx-2 pt-2 lg:mx-8 btn text-sm lg:text-lg bg-purple-400 block text-center text-purple-950">LogIn</Link>
+                    <Link to='/login' className="mx-0 pt-2 lg:mx-8 btn text-sm lg:text-lg bg-purple-400 block text-center text-purple-950">LogIn</Link>
                 </div>}
                 </div>
 
                 {/* Responsive Menu for Small Screens */}
-                <div className="navbar-center lg:hidden">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost">
-                            <svg
+                <div className='navbar-center lg:hidden'>
+                <div className="dropdown dropdown-end">
+  <div tabIndex={0} role="button" className="btn m-1"><svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
                                 fill="none"
@@ -85,15 +84,13 @@ const Root = () => {
                                     strokeLinejoin="round"
                                     strokeWidth="2"
                                     d="M4 6h16M4 12h16M4 18h7" />
-                            </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-[1]">
-                            {links}
-                        </ul>
-                    </div>
+                            </svg></div>
+  <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+    {links}
+  </ul>
+</div>
                 </div>
+                
             </div>
             <Outlet />
         </div>
