@@ -21,6 +21,7 @@ import AdminHome from './admin/AdminHome.jsx'
 import AddRecipe from './privateRoute/AddRecipe.jsx';
 import DeleteRecipe from './privateRoute/DeleteRecipe.jsx';
 import UpdateRecipe from './privateRoute/UpdateRecipe.jsx';
+import PrivateRout from './privateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/recipe/:name",
-        element:<RecipeDetails></RecipeDetails>
+        element:<PrivateRout><RecipeDetails></RecipeDetails></PrivateRout>
       },
       {
         path: "/profile",

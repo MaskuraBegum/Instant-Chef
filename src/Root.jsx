@@ -23,7 +23,7 @@ const Root = () => {
         <>
             <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Homepage</NavLink></li>
             <li><NavLink to='/favorite' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Favorite</NavLink></li>
-            <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Register</NavLink></li>
+            <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Sign up</NavLink></li>
             <li><NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>About</NavLink></li>
         </>
     );
