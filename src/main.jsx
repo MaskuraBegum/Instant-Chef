@@ -22,6 +22,7 @@ import AddRecipe from './privateRoute/AddRecipe.jsx';
 import DeleteRecipe from './privateRoute/DeleteRecipe.jsx';
 import UpdateRecipe from './privateRoute/UpdateRecipe.jsx';
 import PrivateRout from './privateRoute/PrivateRoute.jsx';
+import Chatbot from './Home/Chatbot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         path: "/favorite",
         element: <Favorite></Favorite>
       },
+      {
+        path:"/chatbot",
+        element:<PrivateRout><Chatbot></Chatbot></PrivateRout>
+      }
       
     ]
   },

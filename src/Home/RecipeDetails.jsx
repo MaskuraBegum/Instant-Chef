@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const RecipeDetails = () => {
     const { name } = useParams();
@@ -62,6 +62,11 @@ const RecipeDetails = () => {
                     ♥ Favorite
                 </button>
             </div>
+            <p>[Note: you can ask our AI Chef if you need any help with the ingregients alternative or instruction, also you can dive into the cooking world with the help of our AI Chef]</p>
+            <Link to='/chatbot'>  <button class="fixed bottom-10 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 text-lg transition">
+            💬
+         Ask AI Chef
+</button></Link>
         </div>
     );
 };

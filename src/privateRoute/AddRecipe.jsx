@@ -55,84 +55,107 @@ const AddRecipe = () => {
   };
  
   return (
-    <div>
-      <h2>Add a New Recipe</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Recipe Name:</label>
-          <input
-            type="text"
-            placeholder="Recipe Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Description:</label>
-          <input
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Ingredients (comma-separated):</label>
-          <input
-            type="text"
-            placeholder="Ingredients"
-            value={ingredients}
-            onChange={(e) => setIngredients(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Instructions:</label>
-          <textarea
-            placeholder="Instructions"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Image URL:</label>
-          <input
-            type="text"
-            placeholder="Image URL"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Cooking Time (in minutes):</label>
-          <input
-            type="number"
-            placeholder="Cooking Time"
-            value={cookingTime}
-            onChange={(e) => setCookingTime(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Category:</label>
-          <input
-            type="text"
-            placeholder="Category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Created By (Admin):</label> {/* Added input for createdBy */}
-          <input
-            type="text"
-            placeholder="Created By"
-            value={createdBy}
-            onChange={(e) => setCreatedBy(e.target.value)}
-          />
-        </div>
-        <button type="submit" > Submit
-        </button>
-      </form>
+    <div className="container mx-auto px-4 py-8">
+  <h2 className="text-2xl font-semibold text-center mb-6">Add a New Recipe</h2>
+  <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-4 bg-white p-6 rounded-lg shadow-md">
+    <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Recipe Name:</label>
+        <input
+          type="text"
+          placeholder="Recipe Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Description:</label>
+        <input
+          type="text"
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
     </div>
+    <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Ingredients (comma-separated):</label>
+        <input
+          type="text"
+          placeholder="Ingredients"
+          value={ingredients}
+          onChange={(e) => setIngredients(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Instructions:</label>
+        <textarea
+          placeholder="Instructions"
+          value={instructions}
+          onChange={(e) => setInstructions(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+    </div>
+    <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Image URL:</label>
+        <input
+          type="text"
+          placeholder="Image URL"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Cooking Time (in minutes):</label>
+        <input
+          type="number"
+          placeholder="Cooking Time"
+          value={cookingTime}
+          onChange={(e) => setCookingTime(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+    </div>
+    <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Category:</label>
+        <input
+          type="text"
+          placeholder="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="flex-1">
+        <label className="block text-sm font-medium text-gray-700 mb-1">Created By (Admin):</label>
+        <input
+          type="text"
+          placeholder="Created By"
+          value={createdBy}
+          onChange={(e) => setCreatedBy(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+    </div>
+    <div className="mt-6">
+      <button
+        type="submit"
+        className="w-full py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
   );
 };
 

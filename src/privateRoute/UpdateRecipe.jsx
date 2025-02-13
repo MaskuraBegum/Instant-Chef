@@ -110,92 +110,114 @@ const UpdateRecipe = () => {
   };
 
   return (
-    <div>
-      <h2>Update a Recipe</h2>
-      <div className='flex flex-col w-48'>
-        <label>Recipe Name:</label>
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-2xl font-semibold text-center mb-6">Update a Recipe</h2>
+      <div className="flex flex-col mb-6">
+        <label className="mb-2">Recipe Name:</label>
         <input
           type="text"
           placeholder="Enter Recipe Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
         />
-        <button className='btn btn-primary m-4' type="button" onClick={fetchRecipe}>Fetch Recipe</button> {/* Fetch button */}
+        <button
+          type="button"
+          onClick={fetchRecipe}
+          className="bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          Fetch Recipe
+        </button>
       </div>
-      <form onSubmit={handleUpdate}>
-        <div>
-          <label>Description:</label>
+
+      <form onSubmit={handleUpdate} className="bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto">
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Description:</label>
           <input
             type="text"
             name="description"
             placeholder="Description"
             value={updatedData.description}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Ingredients (comma-separated):</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Ingredients (comma-separated):</label>
           <input
             type="text"
             name="ingredients"
             placeholder="Ingredients"
             value={updatedData.ingredients}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Instructions:</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Instructions:</label>
           <textarea
             name="instructions"
             placeholder="Instructions"
             value={updatedData.instructions}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Image URL:</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Image URL:</label>
           <input
             type="text"
             name="image"
             placeholder="Image URL"
             value={updatedData.image}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Cooking Time (in minutes):</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Cooking Time (in minutes):</label>
           <input
             type="number"
             name="cookingTime"
             placeholder="Cooking Time"
             value={updatedData.cookingTime}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Category:</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Category:</label>
           <input
             type="text"
             name="category"
             placeholder="Category"
             value={updatedData.category}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label>Created By:</label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Created By:</label>
           <input
             type="text"
             name="createdBy"
             placeholder="Created By"
             value={updatedData.createdBy}
             onChange={handleInputChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <button type="submit">Update Recipe</button>
+
+        <button
+          type="submit"
+          className="w-full py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+          Update Recipe
+        </button>
       </form>
-      {message && <p>{message}</p>} {/* Display success/error message */}
+
+      {message && <p className="mt-4 text-center text-lg text-red-500">{message}</p>} {/* Display success/error message */}
     </div>
   );
 };

@@ -47,24 +47,31 @@ const DeleteRecipe = () => {
   };
 
   return (
-    <div>
-      <h2>Delete a Recipe</h2>
-      <form onSubmit={handleDelete}>
-        <div>
-          <label>Recipe Name:</label>
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-2xl font-semibold text-center mb-6">Delete a Recipe</h2>
+      <form onSubmit={handleDelete} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Recipe Name:</label>
           <input
             type="text"
             placeholder="Enter Recipe Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <button type="submit" disabled={!name}>
-          Delete Recipe
-        </button>
+        <div>
+          <button
+            type="submit"
+            disabled={!name}
+            className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:bg-gray-400"
+          >
+            Delete Recipe
+          </button>
+        </div>
       </form>
-      {message && <p>{message}</p>} {/* Display success/error message */}
+      {message && <p className="mt-4 text-center text-lg">{message}</p>} {/* Display success/error message */}
     </div>
   );
 };
