@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from "react-router-dom"; // ei line baad dibo
+
 
 const Recipes = () => {
+    const [searchParams, setSearchParams] = useSearchParams(); 
+    const navigate = useNavigate(); 
+    const searchIngredient = searchParams.get("search") || "";  // Get search query from URL
+
+
+
+
     const [recipes, setRecipes] = useState([]);
-    const [searchIngredient, setSearchIngredient] = useState('');
+    ///const [searchIngredient, setSearchIngredient] = useState('');
     const [data, datalength] = useState(6);
 
     // Fetch all recipes initially or search results based on ingredient
@@ -25,22 +33,29 @@ const Recipes = () => {
         fetchRecipes();
     }, [searchIngredient]); // Runs every time `searchIngredient` changes
 
-    // Handle search input change
     const handleSearchChange = (event) => {
-        setSearchIngredient(event.target.value);
+        const query = event.target.value;
+        setSearchParams({ search: query }); // Store search term in URL
     };
+    
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            const url = searchIngredient
+                ? `http://localhost:5000/recipes/include?ingredients=${searchIngredient}`
+                : "http://localhost:5000/recipes";
+    
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                setRecipes(data.recipeData || []);
+            } catch (error) {
+                console.error("Error fetching recipes:", error);
+            }
+        };
+    
+        fetchRecipes();
+    }, [searchIngredient]); // Runs when searchIngredient changes
 
-    const handleExploreMoreClick = async (searchIngredient) => {
-        const url = `http://localhost:5000/recipes/filter?ingredients=${searchIngredient}`;
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setRecipes(data.recipeData || []); // Update state with the fetched data
-        } catch (error) {
-            console.error('Error fetching recipes:', error);
-        }
-    };
 
     return (
         <div className="mt-10">
@@ -87,13 +102,13 @@ const Recipes = () => {
                             <div className="p-4">
                                 <h3 className="text-lg font-bold text-blue-600">{recipe.name}</h3>
                                 <p className="text-gray-600 text-sm">{recipe.description}</p>
-
+                                {/* View details button */}
                                 <Link
-                                    to={`/recipe/${recipe.name}`}
-                                    className="btn btn-primary hover:bg-primary-focus text-white my-5"
-                                >
+                                    to={`/recipe/${recipe.name}?search=${searchIngredient}`}
+                                    className="btn btn-primary">
                                     View Details
                                 </Link>
+
                             </div>
                         </div>
                     ))
