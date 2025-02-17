@@ -1,11 +1,20 @@
+import { getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import auth from '../firebase/firebase.config';
+import axios from 'axios';
 
 const RecipeDetails = () => {
     const { name } = useParams();
     const [recipe, setRecipe] = useState(null);
+    const [userId, setUserId] = useState(null);
+    const [isFavorite, setIsFavorite] = useState(false);
+
 
     useEffect(() => {
+        const loggedInUserId = localStorage.getItem('userId');
+        setUserId(loggedInUserId);  // Set userId if found
+
         fetch(`http://localhost:5000/recipes?name=${name}`)
             .then(res => res.json())
             .then(data => {
@@ -22,6 +31,44 @@ const RecipeDetails = () => {
             });
     }, [name]);
     console.log(recipe);
+
+     // Add the recipe to favorites
+     const addFavorite = async (recipeId) => {
+        try {
+            const auth = getAuth();
+            const user = auth.currentUser;
+            if (!user) {
+                alert("Please log in to add favorites.");
+                return;
+            }
+
+            // Get the Firebase ID token
+            const idToken = await user.getIdToken();
+            console.log("Firebase ID Token:", idToken);
+
+            const response = await axios.post("http://localhost:5000/recipes/favorite", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${idToken}`, // Include Firebase ID token in the header
+                },
+                body: JSON.stringify({ userId, recipeId: recipe._id }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                setIsFavorite(true); // Mark as favorite
+                alert("Recipe added to favorites!");
+            } else {
+                alert("Failed to add recipe to favorites.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+    
+    
+    
 
     if (!recipe) return <div>Loading...</div>; 
 
@@ -57,10 +104,11 @@ const RecipeDetails = () => {
             <div className="flex justify-end">
                 <button
                     className="text-xl text-red-500 mb-8"
-                    // onClick={() => handleFavorite(recipeId)}
+                    onClick={() => addFavorite(recipe._id)}
                 >
-                    ♥ Favorite
+                    {isFavorite ? '✓ Favorited' : '♥ Favorite'}
                 </button>
+                
             </div>
             <p>[Note: you can ask our AI Chef if you need any help with the ingregients alternative or instruction, also you can dive into the cooking world with the help of our AI Chef]</p>
             <Link to='/chatbot'>  <button class="fixed bottom-10 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 text-lg transition">
