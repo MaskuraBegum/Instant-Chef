@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorite",
-        element: <Favorite></Favorite>
+        element: <PrivateRout><Favorite></Favorite></PrivateRout>
       },
       {
         path:"/chatbot",

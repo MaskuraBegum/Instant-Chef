@@ -34,34 +34,52 @@ const RecipeDetails = () => {
 
      // Add the recipe to favorites
      const addFavorite = async (recipeId) => {
+
         try {
             const auth = getAuth();
             const user = auth.currentUser;
+            console.log("i am user",user)
             if (!user) {
                 alert("Please log in to add favorites.");
                 return;
             }
-
+            
+            const userId= user.uid;
+            const uemail = user.email;
             // Get the Firebase ID token
             const idToken = await user.getIdToken();
-            console.log("Firebase ID Token:", idToken);
+            console.log(userId, 
+                uemail,
+                recipeId);
 
-            const response = await axios.post("http://localhost:5000/recipes/favorite", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${idToken}`, // Include Firebase ID token in the header
+            const response = await axios.post(
+                "http://localhost:5000/recipes/favorite",
+                {
+                    userId, 
+                    uemail,
+                    recipeId
                 },
-                body: JSON.stringify({ userId, recipeId: recipe._id }),
-            });
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${idToken}`, // Include Firebase ID token in the header
+                    },
+                }
+            );
+            
+            const data = await response.data;
 
-            const data = await response.json();
-            if (response.ok) {
-                setIsFavorite(true); // Mark as favorite
-                alert("Recipe added to favorites!");
-            } else {
-                alert("Failed to add recipe to favorites.");
+            if (response.status === 200) {
+                setIsFavorite(true);
+                //alert("Recipe is in your favorites!");
+            
+            } if(response.status === 400){
+                alert('It is already in favourite');
             }
+            else {
+                alert(data.message || "Failed to add recipe to favorites.");
+            }
+            
         } catch (error) {
             console.error("Error:", error);
         }
@@ -104,7 +122,7 @@ const RecipeDetails = () => {
             <div className="flex justify-end">
                 <button
                     className="text-xl text-red-500 mb-8"
-                    onClick={() => addFavorite(recipe._id)}
+                    onClick={() => addFavorite(recipe)}
                 >
                     {isFavorite ? '✓ Favorited' : '♥ Favorite'}
                 </button>
