@@ -56,6 +56,16 @@ const Recipes = () => {
         fetchRecipes();
     }, [searchIngredient]); // Runs when searchIngredient changes
 
+    const handleExploreMoreClick = async (searchIngredient) => {
+        const url = `http://localhost:5000/recipes/filter?ingredients=${searchIngredient}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setRecipes(data.recipeData || []); // Update state with the fetched data
+        } catch (error) {
+            console.error('Error fetching recipes:', error);
+        }
+    };
 
     return (
         <div className="mt-10">
