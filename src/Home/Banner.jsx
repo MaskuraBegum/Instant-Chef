@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Recipes from './Recipes';
 
 const Banner = () => {
     return (
@@ -16,7 +18,7 @@ const Banner = () => {
                     <p className="mb-5">
                     Discover quick, easy, and delicious recipes to satisfy your cravings. Whether you're a busy professional or a home chef, Instant Chef has you covered!
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <Link to='/about'><button className="btn btn-primary">Learn About us</button></Link>
                     </div>
                 </div>
             </div>

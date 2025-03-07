@@ -6,8 +6,9 @@ const About = () => {
             <section class="p-8 bg-gray-50 rounded-lg shadow-lg">
                 <h1 class="text-3xl font-extrabold text-center text-green-800 mb-6 underline italic">About Instant Chef</h1>
                 <p class="text-lg leading-7 mb-6">
-                    Welcome to <strong>Instant Chef</strong>, a platform designed to revolutionize the way you cook. Our goal is to make cooking accessible, intuitive, and enjoyable for everyone. By simply entering the ingredients you have, Instant Chef provides personalized recipes tailored to your pantry, helping you save time and reduce food waste.
-                </p>
+    Welcome to <strong>Instant Chef</strong>, a platform designed to revolutionize the way you cook. Our goal is to make cooking accessible, intuitive, and enjoyable for everyone. By simply entering the ingredients you have, Instant Chef provides personalized recipes tailored to your pantry, helping you save time and reduce food waste. With the assistance of our AI chef, <strong>Juniper</strong>, you'll receive real-time cooking advice, ingredient suggestions, and the ability to add your favorite recipes to a personalized collection for easy access later.
+</p>
+
                 
                 <h2 class="text-2xl font-semibold mb-4">Our Vision</h2>
                 <p class="text-lg leading-7 mb-6">
@@ -19,6 +20,8 @@ const About = () => {
                     <li>Personalized recipe recommendations based on available ingredients.</li>
                     <li>Suggestions for complementary ingredients to elevate your dishes.</li>
                     <li>Comprehensive recipe details, including preparation and cooking steps.</li>
+                    <li>AI chatbot assistance for real-time cooking advice and recipe ideas.</li>
+                    <li>Option to add recipes to your favourites for easy access later.</li>
                     <li>Focus on reducing food waste by utilizing what you already have.</li>
                 </ul>
                 

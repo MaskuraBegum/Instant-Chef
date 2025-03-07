@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../provider/Auth_provider'; // Import AuthContext
+import { Link } from 'react-router-dom';
 
 const UpdateRecipe = () => {
   const { user, isAdmin, loading } = useContext(AuthContext); // Get user and admin status
@@ -216,6 +217,14 @@ const UpdateRecipe = () => {
           Update Recipe
         </button>
       </form>
+      <div className="fixed bottom-6 right-6">
+  <Link to="/" className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold shadow-lg transform hover:scale-105 transition duration-300 flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-7 h-7 mr-2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 9.75L12 3l9 6.75M4.5 10.5v9h15v-9" />
+    </svg>
+    Home
+  </Link>
+</div>
 
       {message && <p className="mt-4 text-center text-lg text-red-500">{message}</p>} {/* Display success/error message */}
     </div>
