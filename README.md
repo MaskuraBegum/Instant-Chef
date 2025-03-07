@@ -1,9 +1,23 @@
-# React + Vite
+# Instant Chef
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Instant Chef is a web-based platform designed to revolutionize the way you cook. It helps users discover personalized recipes based on the ingredients they have in their pantry, with features such as an AI assistant (Juniper) to guide them, suggestions for complementary ingredients, and the ability to save their favorite recipes. Instant Chef also focuses on reducing food waste by promoting the use of existing ingredients.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Instant-Chef
+- **Personalized Recipe Recommendations**: Get recipe suggestions based on the ingredients you have in your pantry.
+- **AI Chef Juniper**: Interact with our AI-powered chef, Juniper, for real-time cooking advice and ingredient suggestions.
+- **Favorite Recipes**: Save your favorite recipes for easy access later.
+- **Reduce Food Waste**: Make the most of what you already have by utilizing available ingredients.
+- **Complementary Ingredient Suggestions**: Get suggestions for complementary ingredients to elevate your dishes.
+- **Recipe Details**: Comprehensive recipe information, including preparation and cooking steps.
+
+## Tech Stack
+
+- **Frontend**: React.js, Tailwind CSS, Daisyui
+- **Backend**: Node.js, Express.js, MongoDB
+- **Authentication**: Firebase user Authentication, Firebase admin SDK
+- **AI Assistant**: Juniper (AI-powered recipe assistant)
+- **Database**: MongoDB (via Mongoose)
+
+
+
