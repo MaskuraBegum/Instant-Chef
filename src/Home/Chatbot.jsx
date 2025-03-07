@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
 
 const Chatbot = () => {
   const [message, setMessage] = useState("");
@@ -27,6 +28,9 @@ const Chatbot = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-gray-100 rounded-2xl shadow-lg">
+       <Helmet>
+        <title>Instant Chef || Home</title>
+        </Helmet>
       <h2 className="text-xl font-bold text-orange-600 mb-2 text-center">🍳 AI Chef Chatbot</h2>
 
       <div className="h-96 overflow-y-auto bg-white p-4 rounded-lg shadow-inner space-y-3">

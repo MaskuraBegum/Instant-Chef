@@ -12,6 +12,7 @@ const AddRecipe = () => {
   const [cookingTime, setCookingTime] = useState(''); // Added state for cookingTime
   const [category, setCategory] = useState(''); // Added state for category
   const [createdBy, setCreatedBy] = useState(''); // Set state for createdBy
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +48,7 @@ const AddRecipe = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      
+      alert('Recipe added successfully');
       console.log('Recipe added:', response.data);
     } catch (error) {
       console.error('Error adding recipe:', error);

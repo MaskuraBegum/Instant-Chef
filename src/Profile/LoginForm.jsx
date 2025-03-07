@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../provider/Auth_provider.jsx';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const LoginForm = () => {
     const {signIn, googleLog} = useContext(AuthContext);
@@ -54,6 +55,9 @@ const LoginForm = () => {
 
     return (
         <div className="flex justify-center items-center h-auto bg-gray-100">
+             <Helmet>
+        <title>Instant Chef || login</title>
+        </Helmet>
             <form ref={formRef} onSubmit={handlelogin} className="w-full max-w-md bg-white p-6 my-28 rounded-lg shadow-md">
                 <div className="form-control mb-5">
                     <label className="label font-semibold text-gray-700">Email</label>

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const AdminHome = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-200 p-6">
+      <Helmet>
+        <title>Instant Chef || Admin</title>
+        </Helmet>
       <div className="bg-white shadow-lg rounded-lg p-8 text-center w-80">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Hello, Admin! 🎉</h1>
         <p className="text-gray-600 mb-6">Manage your recipes with ease.</p>

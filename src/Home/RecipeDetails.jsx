@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import auth from '../firebase/firebase.config';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const RecipeDetails = () => {
     const { name } = useParams();
@@ -94,6 +95,9 @@ const RecipeDetails = () => {
 
     return (
         <div className="max-w-4xl mx-auto mt-10">
+            <Helmet>
+        <title>Instant Chef || Details</title>
+        </Helmet>
             <img
                 src={recipe.image}
                 alt={recipe.name}
