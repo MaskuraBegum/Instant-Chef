@@ -18,6 +18,7 @@ import Auth_provider from './provider/Auth_provider.jsx';
 import Favorite from './Favorite.jsx';
 import AdminPrivate from './privateRoute/AdminPrivate.jsx';
 import AdminHome from './admin/AdminHome.jsx'
+import AdminDetails from './admin/AdminDetails.jsx';
 import AddRecipe from './privateRoute/AddRecipe.jsx';
 import DeleteRecipe from './privateRoute/DeleteRecipe.jsx';
 import UpdateRecipe from './privateRoute/UpdateRecipe.jsx';
@@ -97,6 +98,14 @@ const router = createBrowserRouter([
             <AdminHome></AdminHome>
         </AdminPrivate>
     ),
+},
+{
+  path: "/admin/details",
+  element: (
+    <AdminPrivate>
+      <AdminDetails></AdminDetails>
+    </AdminPrivate>
+  )
 },
     
 ])
