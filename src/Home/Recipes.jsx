@@ -80,7 +80,7 @@ const Recipes = () => {
                 <p className="text-lg text-center font-medium mb-4">
                     Find recipes by entering ingredients you have at home!
                 </p>
-                <label className="input input-bordered flex items-center gap-2 w-72 text-center">
+                <label className="input input-bordered border-2 flex items-center gap-2  text-center">
                     <input
                         type="text"
                         className="grow"
@@ -108,14 +108,14 @@ const Recipes = () => {
                 {recipes.length > 0 ? (
                     recipes.slice(0, data).map((recipe) => (
                         <div key={recipe.id} className="bg-white rounded-lg shadow-md border-y-2 ">
-                            <img src={recipe.image} alt={recipe.name} className="w-full h-80" />
+                            <img src={recipe.image} alt={recipe.name} className="w-full rounded-xl h-80" />
                             <div className="p-4">
-                                <h3 className="text-lg font-bold text-blue-600">{recipe.name}</h3>
+                                <h3 className="text-lg font-bold text-green-800">{recipe.name}</h3>
                                 <p className="text-gray-600 text-sm">{recipe.description}</p>
                                 {/* View details button */}
                                 <Link
                                     to={`/recipe/${recipe.name}?search=${searchIngredient}`}
-                                    className="btn btn-primary">
+                                    className="btn p-4 m-2 text-white bg-green-600">
                                     View Details
                                 </Link>
 

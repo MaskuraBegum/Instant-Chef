@@ -44,6 +44,7 @@ const LoginForm = () => {
                 console.log(result.user);
                 alert('User is successfully logged in');
                 formRef.current.reset();
+                nevigate(-1);
             }
         })
         .catch((error) => {

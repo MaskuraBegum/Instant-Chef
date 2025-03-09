@@ -23,7 +23,9 @@ const Root = () => {
             <li><NavLink to='/favorite' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Favorite</NavLink></li>
             <li><NavLink to='/profile' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Sign up</NavLink></li>
             <li><NavLink to='/about' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>About</NavLink></li>
-            
+            {user?.email === "admin.chef15@gmail.com" && (
+                <li><NavLink to='/admin' className={({ isActive }) => isActive ? 'text-blue-700' : ''}>Dashboard</NavLink></li>
+            )}
         </>
     );
 
@@ -42,19 +44,27 @@ const Root = () => {
 
                 {/* Right Corner: Buttons */}
                 <div className="navbar-end">
-                    {user?.email === "admin.chef15@gmail.com" && (
-                        <Link to='/admin' className="mx-0 lg:mx-8 text-center text-xl text-green-950 font-semibold">Dashboard</Link>
-                    )}
                     {user ? (
-                        <div className="flex flex-col items-end">
+                        <div className="flex flex-col items-end relative">
                             <div className='p-0 lg:p-2'>
-                                <div className='text-xs lg:text-sm p-2 border-2 rounded-2xl'>{user.email}</div>
+                                <div ></div>
                             </div>
-                            <button onClick={logOut} className="mx-0 lg:mx-8 btn text-lg bg-purple-300 text-purple-950">LogOut</button>
+                            <div className="relative group">
+                                <button
+                                    onClick={logOut}
+                                    className="mx-0 lg:mx-8 btn text-lg text-white  bg-[#7B2E2F]"
+                                >
+                                    LogOut
+                                </button>
+                                {/* Tooltip */}
+                                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-12 bg-gray-800 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    {user.email}
+                                </div>
+                            </div>
                         </div>
                     ) : (
                         <div className="navbar-end">
-                            <Link to='/login' className="mx-0 lg:mx-8 btn text-sm lg:text-lg bg-purple-400 text-purple-950">LogIn</Link>
+                            <Link to='/login' className="mx-0 lg:mx-8 btn text-sm lg:text-lg bg-[#7B2E2F] text-white">LogIn</Link>
                         </div>
                     )}
                 </div>

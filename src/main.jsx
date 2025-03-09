@@ -24,6 +24,8 @@ import DeleteRecipe from './privateRoute/DeleteRecipe.jsx';
 import UpdateRecipe from './privateRoute/UpdateRecipe.jsx';
 import PrivateRout from './privateRoute/PrivateRoute.jsx';
 import Chatbot from './Home/Chatbot.jsx';
+import UpdateRecipeForm from './admin/Update.jsx';
+import UserFavorites from './Favorite.jsx';
 
 const router = createBrowserRouter([
   {
@@ -88,6 +90,14 @@ const router = createBrowserRouter([
   element: (
       <AdminPrivate>
           <UpdateRecipe></UpdateRecipe>
+      </AdminPrivate>
+  ),
+},
+{
+  path: "/admin/update2/:name",
+  element: (
+      <AdminPrivate>
+          <UpdateRecipeForm></UpdateRecipeForm>
       </AdminPrivate>
   ),
 },

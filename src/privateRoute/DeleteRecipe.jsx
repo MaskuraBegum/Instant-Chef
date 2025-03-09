@@ -1,12 +1,13 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../provider/Auth_provider'; // Import context
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const DeleteRecipe = () => {
   const { user, isAdmin, loading } = useContext(AuthContext); // Get user and admin status from context
   const [name, setName] = useState('');
   const [message, setMessage] = useState(''); // State for success/error messages
+  const navigate = useNavigate();
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -39,6 +40,8 @@ const DeleteRecipe = () => {
 
       setMessage(response.data.message || 'Recipe deleted successfully.');
       setName(''); // Clear the input field
+      alert("Deleted sucessfully");
+      navigate(-1);
     } catch (error) {
       console.error('Error deleting recipe:', error);
       setMessage(
