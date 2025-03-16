@@ -8,6 +8,8 @@ You can access the live website here: [Instant Chef](https://ourinstantchef.netl
 ### Live Backend API Link:
 You can access the live API here: [Instant Chef Backend](https://instant-chef-api-1.onrender.com/)
 
+### Backend repository:
+You can find the backend code here: [Instant Chef Backend Repository](https://github.com/MaskuraBegum/Instant_Chef_Api).
 ---
 
 ## Features
@@ -29,7 +31,7 @@ You can access the live API here: [Instant Chef Backend](https://instant-chef-ap
 
 ## Backend API
 
-The backend is built using **Node.js**, **Express.js**, and **MongoDB**. You can find the backend code here: [Instant Chef Backend Repository](https://github.com/MaskuraBegum/Instant_Chef_Api). It exposes the following routes:
+The backend is built using **Node.js**, **Express.js**, and **MongoDB**. It exposes the following routes:
 
 - **GET `/recipes`**: Fetch all recipes from the database.
 - **GET `/recipes/filter`**: Filter recipes based on the ingredients provided. It returns recipes that contain any of the specified ingredients (OR logic).
