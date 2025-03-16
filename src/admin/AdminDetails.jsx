@@ -15,7 +15,7 @@ const AdminDetails = () => {
         const fetchRecipes = async () => {
             try {
                 const token = 'your-firebase-token'; // Ensure this token is valid
-                const response = await fetch("http://localhost:5000/recipes", {
+                const response = await fetch("https://instant-chef-api-1.onrender.com/recipes", {
                     headers: {
                         "Authorization": `Bearer ${token}`,
                     },
@@ -56,7 +56,7 @@ const AdminDetails = () => {
         try {
             const token = await user.getIdToken(true);
 
-            const response = await axios.delete(`http://localhost:5000/recipes/delete/${name}`, {
+            const response = await axios.delete(`https://instant-chef-api-1.onrender.com/recipes/delete/${name}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

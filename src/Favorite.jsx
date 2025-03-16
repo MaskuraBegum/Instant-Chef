@@ -11,14 +11,14 @@ const UserFavorites = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/recipes/userfav?uid=${user.uid}`)
+      fetch(`https://instant-chef-api-1.onrender.com/recipes/userfav?uid=${user.uid}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.userFav && data.userFav.length > 0) {
             const favoriteIds = data.userFav[0].favorites;
             return Promise.all(
               favoriteIds.map((id) =>
-                fetch(`http://localhost:5000/recipes?_id=${id}`).then((res) =>
+                fetch(`https://instant-chef-api-1.onrender.com/recipes?_id=${id}`).then((res) =>
                   res.json()
                 )
               )

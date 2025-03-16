@@ -44,7 +44,7 @@ const AddRecipe = () => {
       };
 
       // Make the API request
-      const response = await axios.post('http://localhost:5000/recipes/add', recipeData, {
+      const response = await axios.post('https://instant-chef-api-1.onrender.com/recipes/add', recipeData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

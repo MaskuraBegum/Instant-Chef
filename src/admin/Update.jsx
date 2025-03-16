@@ -26,7 +26,7 @@ const UpdateRecipe = () => {
       }
       try {
         const token = await user.getIdToken(true);
-        const response = await axios.get(`http://localhost:5000/recipes?name=${name}`, {
+        const response = await axios.get(`https://instant-chef-api-1.onrender.com/recipes?name=${name}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -75,7 +75,7 @@ const UpdateRecipe = () => {
     try {
       const token = await user.getIdToken(true);
       const response = await axios.put(
-        `http://localhost:5000/recipes/update/${name}`,
+        `https://instant-chef-api-1.onrender.com/recipes/update/${name}`,
         {
           ...updatedData,
           ingredients: updatedData.ingredients.split(',').map((i) => i.trim()),

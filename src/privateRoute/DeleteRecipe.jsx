@@ -32,7 +32,7 @@ const DeleteRecipe = () => {
       const token = await user.getIdToken(true); // Get the ID token for authorization
 
       // Make the DELETE request to the backend
-      const response = await axios.delete(`http://localhost:5000/recipes/delete/${name}`, {
+      const response = await axios.delete(`https://instant-chef-api-1.onrender.com/recipes/delete/${name}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

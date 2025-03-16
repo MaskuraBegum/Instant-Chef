@@ -16,7 +16,7 @@ const RecipeDetails = () => {
         const loggedInUserId = localStorage.getItem('userId');
         setUserId(loggedInUserId);  // Set userId if found
 
-        fetch(`http://localhost:5000/recipes?name=${name}`)
+        fetch(`https://instant-chef-api-1.onrender.com/recipes?name=${name}`)
             .then(res => res.json())
             .then(data => {
                 const theData = data.recipeData;
@@ -54,7 +54,7 @@ const RecipeDetails = () => {
                 recipeId);
 
             const response = await axios.post(
-                "http://localhost:5000/recipes/favorite",
+                "https://instant-chef-api-1.onrender.com/recipes/favorite",
                 {
                     userId, 
                     uemail,

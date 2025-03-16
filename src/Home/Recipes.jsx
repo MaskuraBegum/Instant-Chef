@@ -18,8 +18,8 @@ const Recipes = () => {
     useEffect(() => {
         const fetchRecipes = async () => {
             const url = searchIngredient 
-                ? `http://localhost:5000/recipes/include?ingredients=${searchIngredient}` 
-                : 'http://localhost:5000/recipes'; // Default to all recipes if no ingredient is entered
+                ? `https://instant-chef-api-1.onrender.com/recipes/include?ingredients=${searchIngredient}` 
+                : 'https://instant-chef-api-1.onrender.com/recipes'; // Default to all recipes if no ingredient is entered
 
             try {
                 const response = await fetch(url);
@@ -41,8 +41,8 @@ const Recipes = () => {
     useEffect(() => {
         const fetchRecipes = async () => {
             const url = searchIngredient
-                ? `http://localhost:5000/recipes/include?ingredients=${searchIngredient}`
-                : "http://localhost:5000/recipes";
+                ? `https://instant-chef-api-1.onrender.com/recipes/include?ingredients=${searchIngredient}`
+                : "https://instant-chef-api-1.onrender.com/recipes";
     
             try {
                 const response = await fetch(url);
@@ -57,7 +57,7 @@ const Recipes = () => {
     }, [searchIngredient]); // Runs when searchIngredient changes
 
     const handleExploreMoreClick = async (searchIngredient) => {
-        const url = `http://localhost:5000/recipes/filter?ingredients=${searchIngredient}`;
+        const url = `https://instant-chef-api-1.onrender.com/recipes/filter?ingredients=${searchIngredient}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
