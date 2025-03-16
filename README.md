@@ -27,7 +27,7 @@ You can find the backend code here: [Instant Chef Backend Repository](https://gi
 - **Frontend**: React.js, Tailwind CSS, DaisyUI
 - **Backend**: Node.js, Express.js, MongoDB
 - **Authentication**: Firebase User Authentication, Firebase Admin SDK
-- **AI Assistant**: Juniper (AI-powered recipe assistant)
+- **AI Assistant**: Google cloud Gemini API (Juniper)
 - **Database**: MongoDB (via Mongoose)
 
 ## Backend API
@@ -57,3 +57,6 @@ The backend is built using **Node.js**, **Express.js**, and **MongoDB**. It expo
 ```bash
 git clone https://github.com/MaskuraBegum/Instant-Chef.git
 cd Instant-chef
+
+
+As a Backend Developer for Instant Chef, I built the backend using Node.js, Express.js, and MongoDB, implementing ingredient matching algorithms and integrating Firebase Admin Authentication for Admin CRUD operation. I developed APIs for managing recipes and interacting with the AI assistant, Juniper, and enabled admin features for recipe management.
